@@ -1,14 +1,15 @@
-import Button from "./Button";
-import styles from "./App.module.css";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Home from "./routes/Home";
 
 function App() {
-  const [counter, setValue] = useState(0);
-  const onClick = () => setValue((prev) => prev + 1);
   return (
-    <div>
-      <h1>Welcome</h1>
-      <button on onClick={onClick}>click me</button>
-    </div>
+    <Router>
+      <Switch>
+        <Route path="/">
+          <Home />
+        </Route>
+      </Switch>
+    </Router>
   );
 }
 
